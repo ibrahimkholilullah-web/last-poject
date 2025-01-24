@@ -1,9 +1,17 @@
+import Blogs from "@/components/Blogs";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+  
+  if (!res.ok) {
+    throw new Error('Failed to fetch posts'); // Handle fetch error
+  }
+  
+  const posts = await res.json();
   return (
     <div className="container mx-auto">
-      <h1>Last project</h1>
+      <Blogs posts={posts}></Blogs>
     </div>
   );
 }
