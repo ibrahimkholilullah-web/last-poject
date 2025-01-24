@@ -10,7 +10,7 @@ export default async function Home() {
   
   const posts = await res.json();
   return (
-    <div className="container mx-auto">
+    <div className=" -mt-8 bg-slate-800 text-white ">
       <Blogs posts={posts}></Blogs>
     </div>
   );

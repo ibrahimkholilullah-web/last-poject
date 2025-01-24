@@ -6,8 +6,8 @@ const Navber =async () => {
   const { getUser } = getKindeServerSession()
   const user = await getUser()
    return (
-    <div className='container mx-auto'>
-      <div className="navbar bg-base-100">
+    <div className='bg-slate-800'>
+      <div className="navbar container mx-auto  text-white py-4">
         <div className="navbar-start">
          
           <a href='/' className="btn btn-ghost text-xl">Home</a>
@@ -24,13 +24,10 @@ const Navber =async () => {
             {
               user ? <>
              <div className='flex items-center gap-4'>
-             <p className=" text-sm flex items-center space-x-2">
-                <span className="">{user?.family_name}</span>
-               
-              </p>
+             
               
-              <LogoutLink>Log out</LogoutLink></div> 
-              </>:<LoginLink>Sign in</LoginLink>
+              <LogoutLink  className='btn border-2 bg-amber-300 px-8'>Log out</LogoutLink></div> 
+              </>:<LoginLink className='btn border-2 bg-amber-300 px-8'>Sign in</LoginLink>
             }
         </div>
       </div>

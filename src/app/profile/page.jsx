@@ -12,10 +12,12 @@ export default async function ProfilePage() {
   }
 
   return (
-    <div className="p-4">
+   <div className='bg-slate-800'>
+     <div className="p-4 container mx-auto  text-white text-center min-h-screen border">
       <h1 className="text-2xl font-bold">Welcome to your profile!</h1>
       <p className="mt-2">Hello, {user.firstName || 'User'}!</p>
       <LogoutLink />
     </div>
+   </div>
   );
 }
